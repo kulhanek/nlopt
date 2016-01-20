@@ -15,6 +15,5 @@ Makefile
 /include/*
 /etc/plugins
 Testing/
-Nemesis15.x.*
-NemesisWin.*
+NLOpt.*
 /test/*
