@@ -12,7 +12,6 @@ DartConfiguration.tcl
 Makefile
 /bin/*
 /lib/*
-/include/*
 /etc/plugins
 Testing/
 NLOpt.*
