@@ -2,7 +2,7 @@
 /* config.h.in.  Generated from configure.ac by autoheader.  */
 
 /* Bugfix version number. */
-#define BUGFIX_VERSION 0
+#define BUGFIX_VERSION 2
 
 /* Define to enable extra debugging code. */
 /* #undef DEBUG */
@@ -81,7 +81,7 @@
 #define MAJOR_VERSION 2
 
 /* Minor version number. */
-#define MINOR_VERSION 3
+#define MINOR_VERSION 4
 
 /* Name of package */
 #define PACKAGE "nlopt"
@@ -93,7 +93,7 @@
 #define PACKAGE_NAME "nlopt"
 
 /* Define to the full name and version of this package. */
-#define PACKAGE_STRING "nlopt 2.3"
+#define PACKAGE_STRING "nlopt 2.4.2"
 
 /* Define to the one symbol short name of this package. */
 #define PACKAGE_TARNAME "nlopt"
@@ -102,7 +102,7 @@
 #define PACKAGE_URL ""
 
 /* Define to the version of this package. */
-#define PACKAGE_VERSION "2.3"
+#define PACKAGE_VERSION "2.4.2"
 
 /* replacement for broken HUGE_VAL macro, if needed */
 /* #undef REPLACEMENT_HUGE_VAL */
@@ -124,13 +124,10 @@
 #define TIME_WITH_SYS_TIME 1
 
 /* Version number of package */
-#define VERSION "2.3"
+#define VERSION "2.4.2"
 
 /* Define if compiled including C++-based routines */
 /* #undef WITH_CXX */
-
-/* Define if we have the non-free Nocedal LBFGS code */
-/* #undef WITH_NOCEDAL */
 
 /* Define to empty if `const' does not conform to ANSI C. */
 /* #undef const */

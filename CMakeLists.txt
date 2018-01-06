@@ -6,7 +6,7 @@ CMAKE_MINIMUM_REQUIRED(VERSION 2.8 FATAL_ERROR)
 #SET(CMAKE_VERBOSE_MAKEFILE ON)
 
 # define project name ----------------------------------------------------------
-SET(NLOPT_VERSION 2.3.0)
+SET(NLOPT_VERSION 2.4.2)
 
 # what languages we use --------------------------------------------------------
 ENABLE_LANGUAGE(C)

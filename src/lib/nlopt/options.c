@@ -1,4 +1,4 @@
-/* Copyright (c) 2007-2012 Massachusetts Institute of Technology
+/* Copyright (c) 2007-2014 Massachusetts Institute of Technology
  *
  * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
@@ -231,7 +231,7 @@ nlopt_result NLOPT_STDCALL nlopt_set_precond_min_objective(nlopt_opt opt,
 nlopt_result NLOPT_STDCALL nlopt_set_min_objective(nlopt_opt opt,
 						   nlopt_func f, void *f_data)
 {
-     nlopt_set_precond_min_objective(opt, f, NULL, f_data);
+     return nlopt_set_precond_min_objective(opt, f, NULL, f_data);
 }
 
 nlopt_result NLOPT_STDCALL nlopt_set_precond_max_objective(nlopt_opt opt, 
@@ -253,7 +253,7 @@ nlopt_result NLOPT_STDCALL nlopt_set_precond_max_objective(nlopt_opt opt,
 nlopt_result NLOPT_STDCALL nlopt_set_max_objective(nlopt_opt opt,
 						   nlopt_func f, void *f_data)
 {
-     nlopt_set_precond_max_objective(opt, f, NULL, f_data);
+     return nlopt_set_precond_max_objective(opt, f, NULL, f_data);
 }
 
 /*************************************************************************/
@@ -735,6 +735,18 @@ void NLOPT_STDCALL nlopt_set_munge(nlopt_opt opt,
      if (opt) {
 	  opt->munge_on_destroy = munge_on_destroy;
 	  opt->munge_on_copy = munge_on_copy;
+     }
+}
+
+void NLOPT_STDCALL nlopt_munge_data(nlopt_opt opt,
+                                    nlopt_munge2 munge, void *data) {
+     if (opt && munge) {
+          unsigned i;
+          opt->f_data = munge(opt->f_data, data);
+          for (i = 0; i < opt->m; ++i)
+               opt->fc[i].f_data = munge(opt->fc[i].f_data, data);
+          for (i = 0; i < opt->p; ++i)
+               opt->h[i].f_data = munge(opt->h[i].f_data, data);
      }
 }
 

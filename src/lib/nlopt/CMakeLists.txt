@@ -4,6 +4,7 @@
 
 # objects in library -----------------------------------------------------------
 SET(NLOPT_SRC
+        esch.c
         auglag.c
         bobyqa.c
         ccsa_quadratic.c
@@ -43,7 +44,7 @@ SET(NLOPT_SRC
         slsqp.c
         sobolseq.c
         stop.c
-        testfuncs.c
+#        testfuncs.c
         timer.c
         )
 
