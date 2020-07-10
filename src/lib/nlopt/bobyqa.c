@@ -3005,6 +3005,7 @@ L650:
 L680:
     if (rho > *rhoend) {
 	delta = half * rho;
+    if( *rhoend != 0.0 ) {
 	ratio = rho / *rhoend;
 	if (ratio <= 16.) {
 	    rho = *rhoend;
@@ -3013,6 +3014,9 @@ L680:
 	} else {
 	    rho = tenth * rho;
 	}
+    } else {
+        rho = tenth * rho;
+    }
 	delta = MAX2(delta,rho);
 	ntrits = 0;
 	nfsav = stop->nevals;
